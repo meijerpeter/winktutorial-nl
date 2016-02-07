@@ -3,7 +3,7 @@
 ##Hoe ziet het code venster eruit?##
 In de wereld van Arduino, het venster waarin je de code schrijft noemen we een *sketch*. We noemen dit ook wel *broncode*. Laten we eens kijken hoe het venster is opgezet:
 
-![Arduino venster](https://meijerpeter.github.com/winktutorial-nl/img/arduino-venster.png)
+![Arduino venster](https://github.com/meijerpeter/meijerpeter/winktutorial-nl/blob/master/img/arduino-venster.png?raw=true)
 
 1. Klik op de knop om je code te *verifieren*. Dit zorgt ervoor dat je code wordt gecompileerd en vertelt je of de computer deze code ook begrijpt.
 
@@ -17,7 +17,7 @@ In de wereld van Arduino, het venster waarin je de code schrijft noemen we een *
 
 6. Dit opent de "Serial Monitor", dit is een venster waarin je de berichten kan zien van je robot. Dit is handig wanneer je de code wil "debuggen".
 
-'''C
+''' c
 /*
 Alles in dit gedeelte is commentaar. Commentaar verteld je onder andere wat het programma doet. De computer negeert commentaar, ze zijn er alleen om mensen te helpen om de code te begrijpen.
 
