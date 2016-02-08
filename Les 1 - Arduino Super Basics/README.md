@@ -17,6 +17,10 @@ In de wereld van Arduino, het venster waarin je de code schrijft noemen we een *
 
 6. Dit opent de "Serial Monitor", dit is een venster waarin je de berichten kan zien van je robot. Dit is handig wanneer je de code wil "debuggen".
 
+##Hoe ziet de broncode eruit?##
+
+Hieronder is een voorbeeld van de broncode, kortweg code, voor het programmeren van de Wink.
+
 ``` c
 /*
 Alles in dit gedeelte is commentaar. Commentaar verteld je onder andere wat het programma doet. 
