@@ -244,3 +244,5 @@ eyesRGB (120,  50,  90)	// Ook dit mag, maar wordt niet veel gebruikt
 Hierboven zie je een voorbeeld van een foutmelding in de Arduino IDE. In dit voorbeeld zijn we vergeten een punt-komma achter de eerste `delay()` te zetten. Vaak wordt hierdoor de regel eronder in het rood aangegeven. Bekijk de regel boven de rode regel om te zien waar de fout zit.
 
 Ook kan je de foutmelding lezen, deze wordt in het oranje onderaan weergegeven. Deze staan wel in Engels, dus pak je woordenboek erbij, gebruik https://translate.google.nl, of vraag het iemand in de buurt!
+
+> Leren programmeren - Ch02 Rev01.2 ~ Plum Geek

@@ -30,6 +30,10 @@ Gebruik commentaar om jezelf en andere mensen te vertellen wat de code doet.
 Commentaar achter een regel code kan door een paar "forward slashes" te gebruiken: //
 */
 
+#include "WinkHardware.h" 	// Dit is een verwijzing naar een uitgebreid broncode bestand
+							// Haal deze regel niet weg, anders werkt jouw eigen code 							
+							// niet meer
+
 /*
 De setup() functie wordt uitgevoerd wanneer de computer start. 
 Het wordt gebruikt om de processor eenmalig te configureren.
@@ -49,5 +53,7 @@ void loop() {
 	delay(250);  //1/4 seconde wachten
 }
 ```
+
+Open nu het Wink_BaseSketch_Rev01_03.ino bestand, hierna start de Arduino IDE op met een kant en klaar stuk code voor je Wink. Er staat nog niets in de `loop()` functie, dit gaan we in de volgende les uitzoeken.
 
 > Leren programmeren - Ch01 Rev01.2 ~ Plum Geek
