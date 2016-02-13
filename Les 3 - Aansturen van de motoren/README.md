@@ -8,7 +8,7 @@ Het is tijd om de Wink te laten rijden! Het aansturen van de motoren is heel mak
   motors(left, right); 	// de motors() functie kent 2 argumenten; de snelheid van de 
 						// linker en rechter motor worden meegeven.
 						// de waarde hiervan kan varieren van 0 tot 255.
-						// Een positief getal zorgt voor voorwaardse beweging, een
+						// Een positief getal zorgt voor voorwaartse beweging, een
 						// negatief getal zorgt ervoor dat de Wink naar achter beweegt.
 
 ```
