@@ -121,4 +121,4 @@ void loop(){
 ```
 
 ##Een paar opmerkingen over de motoren##
-Wat je waarschijnlijk al wel gezien hebt is dat als je motoren op dezelfde snelheid zet, dat de Wink niet geheel in een rechte lijn rijdt. Waarschijnlijk zal de Wink een beetje naar links of rechts afwijken. Dit komt omdat de mechanische motoren nooit helemaal perfect zijn. De ene motor is misschien net iets krachtiger dan de andere, en misschien zal de andere motor net wat meer de oppervlakte van de vloer of tafel aanraken. Dit veroorzaakt de afwijkingen in de rechte lijn. Later zullen we zien hoe we dit moeten compenseren. s
+Wat je waarschijnlijk al wel gezien hebt is dat als je motoren op dezelfde snelheid zet, dat de Wink niet geheel in een rechte lijn rijdt. Waarschijnlijk zal de Wink een beetje naar links of rechts afwijken. Dit komt omdat de mechanische motoren nooit helemaal perfect zijn. De ene motor is misschien net iets krachtiger dan de andere, en misschien zal de andere motor net wat meer de oppervlakte van de vloer of tafel aanraken. Dit veroorzaakt de afwijkingen in de rechte lijn. Later zullen we zien hoe we dit moeten corrigeren.
