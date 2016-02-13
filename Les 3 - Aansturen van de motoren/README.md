@@ -8,8 +8,8 @@ Het is tijd om de Wink te laten rijden! Het aansturen van de motoren is heel mak
   motors(left, right); 	// de motors() functie kent 2 argumenten; de snelheid van de 
 						// linker en rechter motor worden meegeven.
 						// de waarde hiervan kan varieren van 0 tot 255.
-						// Een positieve nummer zorgen voor voorwaardse beweging, een
-						// negatieve nummer zorgt ervoor dat de Wink naar achter beweegt.
+						// Een positief getal zorgt voor voorwaardse beweging, een
+						// negatief getal zorgt ervoor dat de Wink naar achter beweegt.
 
 ```
 
@@ -121,4 +121,4 @@ void loop(){
 ```
 
 ##Een paar opmerkingen over de motoren##
-Wat je waarschijnlijk al wel gezien hebt is dat als je motoren op dezelfde snelheid zet, dat de Wink niet geheel in een rechte lijn rijdt. Waarschijnlijk zal de Wink een beetje naar links of rechts afwijken. Dit komt omdat de mechanische motoren nooit helemaal perfect zijn. De ene motor is misschien net iets krachtiger dan de andere, en misschien zal de andere motor net wat meer de oppervlakte van de vloer of tafel aanraken. Dit veroorzaakt de afwijkingen in de rechte lijn. Later zullen we zien hoe we dit moeten compenseren. 
+Wat je waarschijnlijk al wel gezien hebt is dat als je motoren op dezelfde snelheid zet, dat de Wink niet geheel in een rechte lijn rijdt. Waarschijnlijk zal de Wink een beetje naar links of rechts afwijken. Dit komt omdat de mechanische motoren nooit helemaal perfect zijn. De ene motor is misschien net iets krachtiger dan de andere, en misschien zal de andere motor net wat meer de oppervlakte van de vloer of tafel aanraken. Dit veroorzaakt de afwijkingen in de rechte lijn. Later zullen we zien hoe we dit moeten compenseren. s
