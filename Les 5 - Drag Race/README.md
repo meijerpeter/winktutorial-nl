@@ -1,4 +1,4 @@
-#Les 5 - Drag Racen#
+#Les 5 - Drag Race#
 
 ##Tijd voor iets leuks!##
 Nu dat je de basis wat beter kent, wordt het tijd dat je alles gaat combineren in iets leuks. Laten we kijken hoe snel we de Wink kunnen laten rijden! Iedereen vind het leuk om te racen. In deze les gaan we wat je geleerd hebt toepassen om met de Wink een race programma te gaan maken.
