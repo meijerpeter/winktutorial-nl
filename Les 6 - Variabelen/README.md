@@ -30,7 +30,7 @@ Je kan ook het resultaat van een som in een variabele opslaan. Zie onderstaand v
  vogels = 2 + 3; //Variabele vogels is nu 5
 ```
 
-Als je wil kan je ook de variabele gebruiken in een berekening. Dit is meestal erg handig, bijvoorbeeld als je iets wil optellen. In het volgende voorbeeld geven we "birds" een startwaarde. In de tweede regel gebruiken we deze waarde in de variabele om er een berekening mee te doen en vervolgens het antwoord weer toe te kennen aan de variabele.
+Als je wil kan je ook de variabele gebruiken in een berekening. Dit is meestal erg handig, bijvoorbeeld als je iets wil optellen. In het volgende voorbeeld geven we "vogels" een startwaarde. In de tweede regel gebruiken we deze waarde in de variabele om er een berekening mee te doen en vervolgens het antwoord weer toe te kennen aan de variabele.
 
 ```c
 /*
@@ -105,7 +105,7 @@ Als je dit upload naar je Wink, lijkt het alsof het programma niets doet, maar i
 ##Een paar weetjes over variabelen##
 Hier zijn nog een paar weetjes over variabelen die handig zijn om te weten.
 
-*Omrollen:* Een variabele zal "omrollen" als je het een waarde geeft buiten de grens die het kan opslaan. Bijvoorbeeld, als je de variabele de hoogste waarde toekent die mogelijk is en je telt er 1 bij op, dan zal de waarde "omrollen" en wordt het de laagste waarde die het kan opslaan. Dit werkt op dezelfde manier bij een negatief getal, dan wordt het de vervolgens hoogste waarde die het kan opslaan.
+**Omrollen:** Een variabele zal "omrollen" als je het een waarde geeft buiten de grens die het kan opslaan. Bijvoorbeeld, als je de variabele de hoogste waarde toekent die mogelijk is en je telt er 1 bij op, dan zal de waarde "omrollen" en wordt het de laagste waarde die het kan opslaan. Dit werkt op dezelfde manier bij een negatief getal, dan wordt het de vervolgens hoogste waarde die het kan opslaan.
 
 Als je ooit met een programma werkt waarbij de variabelen vreemde waarden aannemen, dan zou het "omrollen" wel eens de oorzaak kunnen zijn. De taal C (waarin de Arduino wordt geprogrammeerd) zal niets doen om het omrollen te voorkomen, het laat het aan jou om deze fout te maken.
 
@@ -119,11 +119,11 @@ Als je ooit met een programma werkt waarbij de variabelen vreemde waarden aannem
 ```
 > Source: Official Arduino Website (https://www.arduino.cc/en/Reference/Int)
 
-*Geheugen limiet:* Misschien had je jezelf al afgevraagd hoeveel variabelen je kan declareren. Dit hangt af van de hoeveelheid geheugen die je beschikbaar hebt op de Arduino processor die je gebruikt. De Wink heeft 2 KB RAM geheugen (dat is ongeveer 2000 bytes). Elke "int" heeft 2 bytes nodig, dus in principe zou je 1000 verschillende "int" variabelen kunnen gebruiken. Maar, de Arduino, samen met de achtergrond code van de Wink (in WinkStuff.h) gebruikt al 300 bytes van de beschikbare 2000 bytes, dus dat laat nog genoeg ruimte over voor je eigen programma (ongeveer 1700 bytes dus 850 "int" variabelen).
+**Geheugen limiet:** Misschien had je jezelf al afgevraagd hoeveel variabelen je kan declareren. Dit hangt af van de hoeveelheid geheugen die je beschikbaar hebt op de Arduino processor die je gebruikt. De Wink heeft 2 KB RAM geheugen (dat is ongeveer 2000 bytes). Elke "int" heeft 2 bytes nodig, dus in principe zou je 1000 verschillende "int" variabelen kunnen gebruiken. Maar, de Arduino, samen met de achtergrond code van de Wink (in WinkStuff.h) gebruikt al 300 bytes van de beschikbare 2000 bytes, dus dat laat nog genoeg ruimte over voor je eigen programma (ongeveer 1700 bytes dus 850 "int" variabelen).
 
 Het is onwaarschijnlijk dat je niet voldoende geheugen hebt op de Wink. De enige keer dat je tegen de geheugen grens aanloopt is als je grote "arrays" gaat gebruiken (dat is een skill level 3 onderwerp, dus daar hoef je nu geen zorgen om te maken).
 
-*Geheugen hergebruik:* Hou goed in gedachten dat elke keer als je een programma upload naar de Wink, al het geheugen wordt gewist en opnieuw wordt gebruikt. (Behalve voor een speciaal soort geheugen die EEPROM wordt genoemd, die onthoudt de waarden voor eeuwig - dit wordt later behandeld). Voor nu, onthoud dat je het geheugen continu opnieuw kan overschrijven. Als je veel variabelen gebruikt in een sketch dan hoef je je geen zorgen te maken dat je tegen de limiet van je geheugen aanloopt. 
+**Geheugen hergebruik:** Hou goed in gedachten dat elke keer als je een programma upload naar de Wink, al het geheugen wordt gewist en opnieuw wordt gebruikt. (Behalve voor een speciaal soort geheugen die EEPROM wordt genoemd, die onthoudt de waarden voor eeuwig - dit wordt later behandeld). Voor nu, onthoud dat je het geheugen continu opnieuw kan overschrijven. Als je veel variabelen gebruikt in een sketch dan hoef je je geen zorgen te maken dat je tegen de limiet van je geheugen aanloopt. 
 
 ##Andere soorten variabelen##
 We hebben eerder gezegd dat er verschillende soorten variabelen zijn, die zullen we hier kort behandelen. Er zijn er nog veel meer, maar dit zijn de voornaamste die je het meest nodig zult hebben.
@@ -138,7 +138,7 @@ We hebben eerder gezegd dat er verschillende soorten variabelen zijn, die zullen
 | long            | -2.147.483.648 tot 2.147.483.647 | 32 | Handig om hele grote getallen mee op te slaan die zowel positief als negatief kunnen zijn |
 | float           | -3.4028235 e38 tot 3.4028235 e 38 | 32 | De "Floating Point" datatype kan zeer grote getallen opslaan, zowel geheel als gebroken. Het is een zeer flexibel, maar de processor heeft meer tijd nodig dan de andere soorten. Gebruik float data alleen wanneer je getallen nodig hebt met een gedeelte achter de komma. |
 
-*Opmerking over de variabele Bits-lengte:* Je hebt gezien dat in de tabel "Bits" worden genoemd. We gaan wat dieper hierop in in de volgende lessen, maar hier komt toch een kleine introductie. Computers slaan waardes op in achtereenvolgende 1-en en 0-en. De "byte" variabele kan in een keer een serie van acht 1-en en 0-en opslaan, vandaar dat we zeggen dan deze "8-bits lang" is. Om grotere getallen op te slaan, zoals het soort variabele `word`, dan is 8-bits niet genoeg. Dan hebben we een serie nodig van zestien 1-en en 0-en om een `word` op te slaan. Een `float` variabele heeft genoeg ruimte om achtereenvolgens twee-en-dertig 1-en en 0-en op te slaan.
+**Opmerking over de variabele Bits-lengte:** Je hebt gezien dat in de tabel "Bits" worden genoemd. We gaan wat dieper hierop in in de volgende lessen, maar hier komt toch een kleine introductie. Computers slaan waardes op in achtereenvolgende 1-en en 0-en. De "byte" variabele kan in een keer een serie van acht 1-en en 0-en opslaan, vandaar dat we zeggen dan deze "8-bits lang" is. Om grotere getallen op te slaan, zoals het soort variabele `word`, dan is 8-bits niet genoeg. Dan hebben we een serie nodig van zestien 1-en en 0-en om een `word` op te slaan. Een `float` variabele heeft genoeg ruimte om achtereenvolgens twee-en-dertig 1-en en 0-en op te slaan.
 
 Voor nu maakt het niet veel uit in onze voorbeelden, maar weet dat het brein van de Wink (en alle andere 8-bit processoren) alleen 8-bits informatie tegelijkertijd kan verwerken. Meestal verwerkt de Wink het optellen van een paar van 8-bit getallen in 1 cyclus. De Wink kan ook 16-bit cijfers optellen, maar moet deze opbreken in 8-bits per cyclus, en om berekeningen van 32-bits uit te voeren moeten deze in een aantal cycli worden uitgevoerd. De Wink voert 8 miljoen (!) cycli per seconden uit, dus zelfs het rekenen met 32-bit getallen gaat zeer snel....
 
