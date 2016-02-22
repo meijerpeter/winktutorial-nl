@@ -22,7 +22,7 @@ Je kan ook het resultaat van een som in een variabele opslaan. Zie onderstaand v
 
 ```c
 /*
- De tweede regel telt 2 bij 3 op, daarna wordt het resultaat hiervan opgeslagen 
+ De tweede regel telt 2 bij 3 op, daarna wordt het resultaat hiervan opgeslagen
  in "vogels". Het vorige getal van 10 wordt weggegooid en vervangen door een nieuwe waarde
  van 5.
 */
@@ -48,9 +48,9 @@ Het van te voren vertellen dat je een variabele gaat gebruiken heet "declareren"
 
 ```c
 /*
- Dit is hoe je variabele "declareert". Je moet dit doen voordat je de variabele gaat 
+ Dit is hoe je variabele "declareert". Je moet dit doen voordat je de variabele gaat
  gebruiken.
-*/ 
+*/
  int knikkers; //Dit is een variabele om knikkers op te tellen
 ```
 
@@ -76,8 +76,8 @@ Elke variabele bevat een waarde, zelfs direct nadat je het gedeclareerd hebt. No
 
 ```c
 /*
- Dit stukje code declareert de variabele loopCount (aantal keren door de loop functie) 
- en kent het gelijk een initiele waarde toe.
+ Dit stukje code declareert de variabele loopCount (aantal keren door de
+ loop functie) en kent het gelijk een initiele waarde toe.
 */
 int loopCount = 0;	//Declareert loopCount en kent de initiele waarde van 0 toe
 ```
@@ -113,7 +113,7 @@ Als je ooit met een programma werkt waarbij de variabelen vreemde waarden aannem
  int x;
  x = -32768;
  x = x - 1;	// x heeft nu de waarde 32.767 - is omgerold in de negatieve kant
- 
+
  x = 32767;
  x = x + 1; // x heeft nu de waarde -32768
 ```
@@ -123,7 +123,7 @@ Als je ooit met een programma werkt waarbij de variabelen vreemde waarden aannem
 
 Het is onwaarschijnlijk dat je niet voldoende geheugen hebt op de Wink. De enige keer dat je tegen de geheugen grens aanloopt is als je grote "arrays" gaat gebruiken (dat is een skill level 3 onderwerp, dus daar hoef je nu geen zorgen om te maken).
 
-**Geheugen hergebruik:** Hou goed in gedachten dat elke keer als je een programma upload naar de Wink, al het geheugen wordt gewist en opnieuw wordt gebruikt. (Behalve voor een speciaal soort geheugen die EEPROM wordt genoemd, die onthoudt de waarden voor eeuwig - dit wordt later behandeld). Voor nu, onthoud dat je het geheugen continu opnieuw kan overschrijven. Als je veel variabelen gebruikt in een sketch dan hoef je je geen zorgen te maken dat je tegen de limiet van je geheugen aanloopt. 
+**Geheugen hergebruik:** Hou goed in gedachten dat elke keer als je een programma upload naar de Wink, al het geheugen wordt gewist en opnieuw wordt gebruikt. (Behalve voor een speciaal soort geheugen die EEPROM wordt genoemd, die onthoudt de waarden voor eeuwig - dit wordt later behandeld). Voor nu, onthoud dat je het geheugen continu opnieuw kan overschrijven. Als je veel variabelen gebruikt in een sketch dan hoef je je geen zorgen te maken dat je tegen de limiet van je geheugen aanloopt.
 
 ##Andere soorten variabelen##
 We hebben eerder gezegd dat er verschillende soorten variabelen zijn, die zullen we hier kort behandelen. Er zijn er nog veel meer, maar dit zijn de voornaamste die je het meest nodig zult hebben.
