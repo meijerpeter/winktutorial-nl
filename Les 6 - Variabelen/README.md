@@ -130,13 +130,13 @@ We hebben eerder gezegd dat er verschillende soorten variabelen zijn, die zullen
 
 | Soort variabele | Waarden reeks | Bits | Omschrijving |
 |-----------------|---------------|------|--------------|
-| byte            | 0 tot 255     | 8    | Nummer van 0 tot 255, geen negatieve nummers toegestaan |
-| char            | =128 tot 127  | 8    | Sommige compilers zullen dit interpreteren als een karakter (zoals een letter op je toetstenbord)|
-| word            | 0 tot 65535   | 16   | Dit kan hogere waardes bevatten dan "int", behalve dat je geen negatieve waardes kan opslaan |
-| int             | -32768 tot 32767 | 16 | Dit is het meest gebruikte soort variabele. Het kan zowel grote positieve als negatieve getallen opslaan |
-| unsigned long   | 0 tot 4.294.967.295 | 32 | Dit soort variabele is nodig om het resultaat van de functie `millis()` op te slaan, zodat je kan zien hoe lang het programma heeft gedraaid. |
-| long            | -2.147.483.648 tot 2.147.483.647 | 32 | Handig om hele grote getallen mee op te slaan die zowel positief als negatief kunnen zijn |
-| float           | -3.4028235 e38 tot 3.4028235 e 38 | 32 | De "Floating Point" datatype kan zeer grote getallen opslaan, zowel geheel als gebroken. Het is een zeer flexibel, maar de processor heeft meer tijd nodig dan de andere soorten. Gebruik float data alleen wanneer je getallen nodig hebt met een gedeelte achter de komma. |
+| byte            | 0 tot en met 255     | 8    | Nummer van 0 tot 255, geen negatieve nummers toegestaan |
+| char            | -128 tot en met 127  | 8    | Sommige compilers zullen dit interpreteren als een karakter (zoals een letter op je toetstenbord)|
+| word            | 0 tot en met 65535   | 16   | Dit kan hogere waardes bevatten dan "int", behalve dat je geen negatieve waardes kan opslaan |
+| int             | -32768 tot en met 32767 | 16 | Dit is het meest gebruikte soort variabele. Het kan zowel grote positieve als negatieve getallen opslaan |
+| unsigned long   | 0 tot en met 4.294.967.295 | 32 | Dit soort variabele is nodig om het resultaat van de functie `millis()` op te slaan, zodat je kan zien hoe lang het programma heeft gedraaid. |
+| long            | -2.147.483.648 tot en met 2.147.483.647 | 32 | Handig om hele grote getallen mee op te slaan die zowel positief als negatief kunnen zijn |
+| float           | -3.4028235 e38 tot en met 3.4028235 e 38 | 32 | De "Floating Point" datatype kan zeer grote getallen opslaan, zowel geheel als gebroken. Het is een zeer flexibel, maar de processor heeft meer tijd nodig dan de andere soorten. Gebruik float data alleen wanneer je getallen nodig hebt met een gedeelte achter de komma. |
 
 **Opmerking over de variabele Bits-lengte:** Je hebt gezien dat in de tabel "Bits" worden genoemd. We gaan wat dieper hierop in in de volgende lessen, maar hier komt toch een kleine introductie. Computers slaan waardes op in achtereenvolgende 1-en en 0-en. De "byte" variabele kan in een keer een serie van acht 1-en en 0-en opslaan, vandaar dat we zeggen dan deze "8-bits lang" is. Om grotere getallen op te slaan, zoals het soort variabele `word`, dan is 8-bits niet genoeg. Dan hebben we een serie nodig van zestien 1-en en 0-en om een `word` op te slaan. Een `float` variabele heeft genoeg ruimte om achtereenvolgens twee-en-dertig 1-en en 0-en op te slaan.
 
