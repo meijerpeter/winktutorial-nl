@@ -1,5 +1,5 @@
 #Lichtsensoren uitlezen#
-Een van de dingen die de robot "slim" maakt is hun vermogen om te "voelen" wat om hun heen gebeurd. Door te voelen wat om hun heen gebeurt kunnen ze geprogrammeerd worden om beslissingen te nemen op basis van wat ze voelen. We zullen in de volgende les verder ingaan op beslissingen nemen door het leren van het "if" ("als") woord.
+Een van de dingen die de robot "slim" maakt is hun vermogen om te "voelen" wat om hun heen gebeurt. Door te voelen wat om hun heen gebeurt kunnen ze geprogrammeerd worden om beslissingen te nemen op basis van wat ze voelen. We zullen in de volgende les verder ingaan op beslissingen nemen door het leren van het "if" ("als") woord.
 
 Laten we eens beginnen met het leren van het uitlezen van de lichtsensoren van de Wink. De Wink heeft 3 lichtsensoren vlakbij zijn neus die naar voren zijn gericht. Het zijn smalle, witte rechthoeken met een bolle lens. Een van de sensoren is recht vooruit gericht, de andere staan een klein beetje naar buiten gericht met een hoek van 45 graden naar links en rechts.
 
@@ -16,7 +16,7 @@ Laat niet de moeilijke naam van de functie je bang maken. Het is niet moeilijk. 
 
 Een computerbrein, zoals die van de Wink, kan voelen wat het ziet op zijn elektrische pootjes. Die pootjes zijn de elektrische contacten de zijden van het onderdeel. In de elektronica noemen we deze verbindingen "pinnen" ("pins" in het Engels). Als de lichtsterkte verandert, dan verandert ook het elektrische voltage. Het heeft de neiging om hoger te worden wanneer het licht sterker wordt en een lager voltage af te geven wanneer er minder licht op de sensor valt. Dit soort signalen worden een "analoog" signaal genoemd.
 
-Om dit signaal te kunnen lezen ("read" in het Engels), is het logisch om een functie te maken die `analogRead()` heet en dat is exact wat ze bij de Arduino hebben gedaan. De drie voorste lichtsensoren die we gaan gebruiken in deze lessen heten Lichtsensoren ("Ambient sensors" in het Engels), deze sensoren pikken het licht op in de omgeving van de Wink en zetten het om in een elektrisch signaal.
+Om dit signaal te kunnen lezen ("read" in het Engels), is het logisch om een functie te maken die `analogRead()` heet en dat is exact wat ze bij de Arduino hebben gedaan. De drie voorste lichtsensoren die we gaan gebruiken in deze lessen heten lichtsensoren ("Ambient sensors" in het Engels), deze sensoren pikken het licht op in de omgeving van de Wink en zetten het om in een elektrisch signaal.
 
 Wanneer je de code gaat schrijven kan je de sensoren als volgt aanroepen; `AmbientSenseLeft`, `AmbientSenseCenter` en `AmbientSenseRight`. Volgens mij kan je zelf al zien welke sensor moet worden aangeroepen met welke naam.
 
@@ -88,6 +88,9 @@ Laten we nog een paar dingen doen om je een beetje meer uit te dagen, daarna kun
 Herinner je nog de vorige les waar we de functie `millis()` direct in de `Serial.print()` functie zette? Denk je dat je hetzelfde kan doen met `analogRead()`? Natuurlijk! Kijk maar of je dit zelf kan doen voordat je naar het onderstaande voorbeeld kijkt.
 
 ```c
+/*
+ De analogRead functie direct geplaatst in de Serial.print() functies.
+*/
 void loop(){
   Serial.print(analogRead(AmbientSenseLeft));   //print linker waarde
   Serial.print(“\t”);                           //print een tab
@@ -99,12 +102,12 @@ void loop(){
 
 ```
 
-Leuk he!? Je mag nu echt trots zijn op jezelf. Een korte blik op bovenstaande code laat zien dat je veel geleerd hebt. Voordat je de eerste les startte, dacht je nog dat het heel moeilijk was om code te schrijven. Het blijkt dat de computer code, net als heel veel andere dingen, bepaalde regels en patronen volgt en zolang je die begrijpt het geheel best eenvoudig is en leesbaar.
+Leuk he!? Je mag nu echt trots zijn op jezelf. Een korte blik op bovenstaande code laat zien dat je veel geleerd hebt. Voordat je de eerste les startte, dacht je nog dat het heel moeilijk was om code te schrijven. Het blijkt dat de computer code, net als heel veel andere dingen, bepaalde regels en patronen volgen en zolang je die begrijpt het geheel best eenvoudig en leesbaar is.
 
-Wat je misschien lastig vindt is het uitschrijven van die lange regels. Het opschrijven van `motors(100,100);` is misschien nog wel te doen, maar de langere regels zoals `Serial.print(AmbientSenseCenter);` worden wat lastiger. Als je elk voorbeeld uitschrijft dan heb je vast wel vaker meegemaakt dat de code niet wilde compileren vanwege een typfout.
+Wat je misschien lastig vindt is het uitschrijven van die lange regels. Het opschrijven van `motors(100,100);` is misschien nog wel te doen, maar de langere regels zoals `Serial.print(AmbientSenseCenter);` worden wat lastiger. Als je elk voorbeeld uitschrijft dan heb je vast wel vaker meegemaakt dat de code niet wilde compileren vanwege een typefout.
 
-Een tip hierbij is om zoveel als mogelijk te Kopieren en Plakken. Leer en gebruik de toetsenbord combinaties hiervoor. Op de meeste computers is dit Ctrl-C om te kopieren, en Ctrl-V om te plakken. Wanneer je meerdere regels moet schrijven die erg op elkaar lijken, selecteer dan de eerste regel, druk op Ctrl-C en gebruik de pijltjes op je toetsenbord om naar de volgende regel te gaan en druk op Ctrl-V om een kopie te maken. Dan kun je daarna gemakkelijk het stukje aanpassen wat net even anders is. In bovenstaand voorbeeld zitten de enige verschillen in de woorden "Left", "Center" en "Right".
+Een tip is om zoveel als mogelijk te "kopieren" en "plakken". Leer en gebruik de toetsenbord combinaties hiervoor. Op de meeste computers is dit Ctrl-C om te kopieren, en Ctrl-V om te plakken. Wanneer je meerdere regels moet schrijven die erg op elkaar lijken, selecteer dan de eerste regel, druk op Ctrl-C en gebruik de pijltjes op je toetsenbord om naar de volgende regel te gaan en druk op Ctrl-V om een kopie te maken. Dan kun je daarna gemakkelijk het stukje aanpassen wat net even anders is. In bovenstaand voorbeeld zitten de enige verschillen in de woorden "Left", "Center" en "Right".
 
-In een van de volgende lessen zullen we leren hoe we onze eigen functies moeten schrijven, waardoor je een aantal regels kan verkorten tot iets heel kort, zoals `prs()` wat staat voor "print right sensor" ("print rechter sensor" in het Nederlands).
+In een van de volgende lessen zullen we leren hoe we onze eigen functies moeten schrijven, waardoor je een aantal regels kan verkorten tot iets heel kort, zoals `prs();` wat staat voor "print right sensor" ("print rechter sensor" in het Nederlands).
 
 In de volgende les gaan we leren hoe de Wink slimmer wordt door keuzes te maken. Dan gaan we gebruik maken van het krachtige "if" woord.
