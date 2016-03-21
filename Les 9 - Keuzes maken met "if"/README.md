@@ -70,7 +70,7 @@ Wanneer loopCount wordt gedeclareerd, wordt de waarde op 0 gezet. De eerste keer
 
 'loopCount' wordt vervolgens opgehoogd met 1, dus nu is het de waarde 1 geworden. Dit wordt elke keer herhaald, totdat 'loopCount' 6 wordt. Op dat moment, de zesde keer dat de 'loop()' functie wordt herhaald, zal weer de 'if' instructie zich afvragen of "is het waar dat loopCount groter is dan 5?", en omdat 'loopCount' nu 6 is op dit moment wordt de voorwaarde _waar_ omdat 6 daadwerkelijk groter is dan 5. Omdat het waar is zal de code binnen de accolades, 'eyesCyan(100);', nu wel worden uitgevoerd, zodat in ons geval de ogen van de Wink cyan worden gekleurd.
 
-##Meer over de "voorwaarde"##
+###Meer over de "voorwaarde"###
 De "voorwaarde" is het gedeelte wat wordt bekeken of het waar (true) of niet waar (false) is. Het staat tussen haakjes. In het vorige voorbeeld wilden we eigenlijk de ogen aanzetten na 5 seconden, maar je zal hebben gezien dat het eigenlijk 6 seconde duurde voordat de ogen aangezet werden. Dit komt omdat we de 'if' instructie hebben verteld waar te zijn als 'loopCount' __groter__ is dan 5. Dus het zal niet eerder uitgevoerd worden totdat de waarde van 'loopCount' 6 wordt.
 
 Soms willen we iets uitvoeren als een getal groter of __gelijk__ is aan een ander getal. Dit kunnen we eenvoudig doen door het "groter dan" teken te wijzigen in een "groter en gelijk aan" teken. Zoals in dit voorbeeld...
@@ -133,7 +133,7 @@ Daarna volgt de 'if' instructie waarin we met een dubbel is-gelijk teken een ver
 
 Als het klopt dat 'birds' gelijk is aan 10, dan is de voorwaarde waar (true) en zal de code tussen de accolades uitgevoerd worden. Als de waarde niet gelijk is aan 10, dan is de voorwaarde niet waar (false) en zal de code tussen de accolades niet uitgevoerd worden.
 
-##Een andere opmaak voor de "if" instructie##
+###Een andere opmaak voor de "if" instructie###
 Je kan de opmaak (de manier waarop je iets schrijft) van de 'if' instructie op verschillende manieren weergeven. Sommige programmeurs houden ervan om de accolades op aparte regels te zetten, waardoor de code beter leesbaar wordt. Tot op dit moment schreven wij de openings accolade op dezelfde regel als de voorwaarde. Beide manieren mogen. Hier is een voorbeeld:
 
 ```c
@@ -149,7 +149,7 @@ Je kan de opmaak (de manier waarop je iets schrijft) van de 'if' instructie op v
     eyesRed(100);   // de code binnen de accolades
   }                 // afsluiten met de gesloten accolade
 ```
-##Een tweede keuze maken met "else"##
+###Een tweede keuze maken met "else"###
 Nu weet je hoe je code kan uitvoeren als een bepaalde voorwaarde waar is. Soms is dit voldoende om je programme uit te voeren, maar soms wil je ook dat iets wordt uitgevoerd als de voorwaarde waar is, en dat iets anders wordt uitgevoerd als de voorwaarde niet waar is.
 
 Bijvoorbeeld, je wil het lampje aanzetten als een knopje wordt ingedrukt en als de knop niet wordt ingedrukt het lampje weer uitzetten. We zullen je later laten zien hoe je het knopje in je 'if' instructie kan gebruiken. Voor nu zullen we het gebruik van 'else' demonstreren met ons eerder voorbeeld gebruikmakend van 'loopCount'.
@@ -210,7 +210,7 @@ Omdat we beide sensoren gaan uitlezen, zullen we hiervoor een aantal variabelen 
 
 Denk eens na hoe je dit zou maken, en kijk pas daarna naar het voorbeeld hieronder of dit overeenkomt met hoe jij het zou hebbeb gemaakt. Als je je wil uitdagen, open dan de Wink Base Sketch en schrijf dit programma dan eens helemaal zelf en kijk pas daarna naar het voorbeeld.
 
-##Eenvoudig het licht zoeken - het voorbeeld##
+###Het voorbeeld###
 Ik raad je aan om eerst zelf uit te zoeken hoe je het lichtzoek probleem zou oplossen voordat je verder gaat. Als je deze lessen in een groep volgt, bespreek dan eerst eens met elkaar hoe je de oplossing zou realiseren.
 
 Hier is het voorbeeld hoe wij het hebben opgelost:
@@ -256,10 +256,10 @@ Probeer eens bovenstaande code te uploaden en uit te voeren om te zien om de Win
 
 Wanneer je gaat experimenteren met bovenstaande code zal je ook een aantal gekke dingen zien, maar we zullen daar later op terugkomen. Als je dit gedrag ziet, denk dan goed na over de code en waarom dit "vreemde" gedrag getoond wordt. Vaak zal een programma niet precies doen wat je zou verwachten of willen, dus is het goed om over dit "vreemd" gedrag goed na te denken.
 
-##Discussie over het eenvoudige licht zoeken##
+###Wat is je opgevallen?###
 Nu heb je code geschreven die de Wink echt slimmer maakt. Laten we eens over een aantal dingen gaan praten die je misschien zijn opgevallen.
 
-###Eindeloos draaien###
+####Eindeloos draaien####
 De Wink zal soms in een rondje draaien. Waarom is dit? Als de verlichting in de ruimte redelijk hetzelfde is, dan zal de Wink niet zien dat de ene kant lichter is dan de andere kant. In onze code hebben we de Wink niet verteld om "stil te staan als het licht redelijk gelijk is", in plaats daarvan hebben we de Wink geprogrammeerd om continu te blijven draaien. Zelfs als de waardes van de linker en rechter sensor hetzelfde zijn, dan wordt de 'else' te worden uitgevoerd elke keer dat de 'loop()' functie wordt doorlopen zodat de Wink altijd naar een kant blijft draaien.
 
 Een andere reden is dat de sensoren niet perfect zijn en ook niet identiek. Tijdens de fabricage (het maken) van de sensoren zal altijd de ene sensor iets meer sensitiever zijn dan de andere. Dit kan worden gecorrigeerd door dure sensoren en filters, maar zelfs dan zullen ze bijna nooit exact dezelfde waarde teruggeven, zelf als het licht perfect is.
@@ -267,10 +267,10 @@ Een andere reden is dat de sensoren niet perfect zijn en ook niet identiek. Tijd
 Als je een uitdaging zoekt, gebruik dan de 'Serial.print()' functies die we eerder geleerd hebben om te zien welke waarde er worden gelezen. _Je kan dan het beste de code voor de aansturing van de motor uitzetten zodat de Wink niet gaat draaien. Dit kan je gemakkelijk doen door een paar "forward slashes" (//) voor de twee 'motors()' regels te zetten. Dit zorgt ervoor dat de code als commentaar wordt behandeld en niet wordt uitgevoerd. Dit is een gebruikelijke manier om iets tijdelijk te testen zonder het helemaal weg te halen._
 Bekijk de waarde van de 'leftLight' en 'rightLight' en probeer eens een gelijke belichting van de sensoren te krijgen. Je zal zien dat in een gelijke situatie de een altijd hoger is dan de andere. Op basis hiervan zou je dit kunnen compenseren in de code, bijvoorbeeld als de 'leftLight' altijd 5 hoger is dan de 'rightLight', kan je bijvoorbeeld in een nieuwe regel net voor de 'if' instructie 5 bij 'rightLight' optellen.
 
-###De Wink gaat heen en weer###
+####De Wink gaat heen en weer####
 Dit noemen we "oscilatie". Wanneer iets aan het oscilleren is, dan beweegt het heen en weer tussen twee dingen. Als de Wink het licht aan de ene kant sterker ziet, dan zal het die kant gaan opdraaien met een het aanzetten van de motoren. Als hij draait, zal hij voorbij het licht draaien zodat de andere sensor het licht ziet en vervolgens wordt de beweging de andere kant ingezet. Omdat hij al in beweging is zal hij er een klein beetje voorbij bewegen en daarna weer richting het licht bewegen. Dit zal beide kanten op gebeuren, waardoor de Wink om en om heen en weer blijft bewegen naar de linker en rechter kant. Dit kunnen we op een aantal manieren compenseren. Een optie is om de snelheid van de motoren aan te passen op basis van het verschil tussen de twee lichtsensoren. Dit is een wat geavanceerde optie die we pas tijdens een moeilijkere les zullen behandelen.
 
-###Wink zet zich "vast" in een richting, en richt zich opeens op een andere lichtbron###
+####Wink zet zich "vast" in een richting, en richt zich opeens op een andere lichtbron####
 De Wink kan zich richten op een bepaalde lichtbron en die richting vast blijven houden zonder te oscilleren. Mocht er een schaduw over de Wink vallen, zal de Wink wellicht op zoek gaan naar een andere lichtbron en zich daar op vast zetten. Het hangt veel af van waar het licht vandaan komt in de ruimte waar de Wink zich in bevindt. Probeer maar eens de Wink aan te zetten in een ruimte met gelijk licht en dan je hand over de Wink te bewegen zodat er een schaduw over de lichtsensoren valt.
 
 ##De opmaak van je code##
@@ -379,7 +379,7 @@ void loop(){
 } //end of loop()
 ```
 
-###Uitdaging: bespreking###
+###Berekening in de voorwaarde###
 Bekijk bovenstaand voorbeeld en probeer te begrijpen wat hier gebeurt.
 
 We hebben een nieuw idee geintroduceerd in het voorbeeld. Heb je gezien dat we een berekening uitvoeren in de voorwaarde van de 'if' en 'else if'? Cool he? Het programma zal eerst de berekening uitvoeren, daarna zal het resultaat van de berekening worden gebruikt om te vergelijken.
