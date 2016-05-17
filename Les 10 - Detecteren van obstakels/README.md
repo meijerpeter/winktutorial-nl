@@ -47,7 +47,7 @@ Het eerste argument van `digitalWrite` is de naam van de pin die je wil aan- of 
 Zoals we hebben gezien van de vorige plaatjes, kunnen we het voorlicht van de Wink aanzetten en met de lichtsensor meten hoeveel licht er wordt weerkaatst. Dat klinkt eenvoudig, dus laten we dit eens met een voorbeeld uitproberen.
 
 ```c
-int centerLight; //declare variable 
+int centerLight; //declareer variabele 
 
 /*
  Gebruik digitalWrite om het voorlicht aan te zetten en dit vervolgens uit te lezen.
@@ -81,7 +81,7 @@ Wat zou de beste drempelwaarde kunnen zijn om te gebruiken? (Een drempelwaarde w
 Laten we de `Serial.print()` functie gebruiken zodat de Wink kan vertellen hoeveel licht er wordt gemeten. We zullen deze functie in de code zetten van het eerdere voorbeeld.
 
 ```c
-int centerLight; //declare variable 
+int centerLight; //declareer variabele 
 
 /*
  Gebruik digitalWrite om het voorlicht aan te zetten en dit vervolgens uit te lezen.
@@ -199,7 +199,7 @@ Het idee is om een lichtsterkte meting te doen terwijl de Wink niet beweegt en z
 
 Zodra we deze "nul-meting" hebben gedaan en opgeslagen, kan de Wink beginnen met rijden en kunnen we meerdere metingen gaan doen. Deze nieuwe metingen kunnen we vergelijken met de oude waarde, en als de nieuwe meting met een bepaalde waarde naar boven afwijkt wordt dit de nieuwe nul-meting.
 
-## Waarschuwing: enge code! ##
+## Waarschuwing: indrukwekkende code! ##
 De code die straks volgt ziet er indrukwekkend uit, maar het is niet zo erg als het lijkt. Het is het langste voorbeeld die we tot nu hebben gezien, maar laat dit je niet afschrikken. In een vervolgles gaan we leren hoe we onze eigen "functies" kunnen schrijven om deze code veel korter te maken en beter te begrijpen.
 
 De reden dat het voorbeeld zo lang lijkt is dat we grotendeels een stuk code herhalen die het voorlicht aan en uit zet, de lichtsterkte meet en vervolgens het verschil uitrekent.
