@@ -1,5 +1,5 @@
-= Detecteren van obstakels =
-== Een onzichtbaar voorlicht ==
+# Detecteren van obstakels #
+## Een onzichtbaar voorlicht ##
 Wink heeft een speciaal licht onder zijn voorkant. Dit licht bevindt zich aan de onderkant van de zwarte printplaat helemaal aan de voorkant. Het is geelachtig, doorzichtig en heeft de vorm van een koepel die naar voren wijst. Kijk maar eens of je dit licht kan vinden.
 
 Het is een speciaal licht die door je code aan kan worden gezet. Wanneer dit licht aanstaat kan je het niet met je eigen ogen zien omdat je ogen niet aangepast zijn aan de golflengte van de licht van dit lampje, maar er komt wel degelijk licht uit. Herinner je je nog in de vorige les waar we de lichtsensor hebben gebruikt om het licht uit een zaklamp te meten? Deze lichtsensoren zijn wel gevoelig voor deze golflengte en kunnen het "onzichtbare" licht wel meten uit het lampje onderaan de Wink.
@@ -22,7 +22,7 @@ Hieronder staan een aantal aanwijzingen voor obstakels en oppervlaktes die we mo
   - Een obstakel met een lichte kleur (bijvoorbeeld wit) zal meer licht reflecteren dan een obstakel met een donkere kleur. Dit komt door het feit dat donkere kleuren donker zijn omdat ze minder licht weerkaatsen.
   - Een vergelijkbaar iets vindt plaats bij een oppervlakte. Een licht oppervlakte (zoals wit papier) zal meer licht weerkaatsen dan een donker oppervlakte (zoals een zwart of bruin gekleurde tafel of bureau).
   
-== De functie digitalWrite ==
+## De functie digitalWrite ##
 In de volgende voorbeelden zal je een nieuwe functie gaan gebruiken die `digitalWrite` heeft. Alle kleine elektrische verbindingen in het brein van de Wink zijn verbonden met de elektrische onderdelen door middel van de elektrisch geleidende sporen op de printplaat.  `digitalWrite` is de basis functie die door de Arduino omgeving wordt gebruikt om deze verbindingen aan of uit te zetten. Elke verbinding heeft een super kleine elektrische schakelaar binnenin het brein van de Wink en `digitalWrite` is de functie die wordt gebruikt om deze schakelaar aan of uit te zetten.
 
 In electronica gebruiken we de het woord "digitaal" om aan te geven dat iets aan of uit kan staan, met geen andere optie. Wanneer een schakelaar "aan" staat zeggen we dat deze "hoog" (high) is. Wanneer de schakelaar "uit" staat is deze "laag" (low).
@@ -43,7 +43,7 @@ digitalWrite(Headlight, LOW); 	//uitzetten van het voorlicht
 
 Het eerste argument van `digitalWrite` is de naam van de pin die je wil aan- of uitzetten. Met het tweede argument vertel je of deze aan (HIGH) of uit (LOW) moet zijn. De argumenten moeten met een komma worden gescheiden, en de woorden HIGH en LOW moeten in hoofdletters worden geschreven.
 
-== Het detecteren van een obstakel ==
+## Het detecteren van een obstakel ##
 Zoals we hebben gezien van de vorige plaatjes, kunnen we het voorlicht van de Wink aanzetten en met de lichtsensor meten hoeveel licht er wordt weerkaatst. Dat klinkt eenvoudig, dus laten we dit eens met een voorbeeld uitproberen.
 
 ```c
@@ -56,7 +56,7 @@ int centerLight; //declare variable
 void loop(){
 
 	digitalWrite(Headlight, HIGH); //zet het voorlicht aan 
-	centerLight = analogRead(AmbientSenseCenter); //lees de lichtsensor
+	centerLight # analogRead(AmbientSenseCenter); //lees de lichtsensor
 
 	if (centerLight < 100)	//als centerLight lager is dan 100
 	{
@@ -91,7 +91,7 @@ int centerLight; //declare variable
 void loop(){
 
 	digitalWrite(Headlight, HIGH); //zet het voorlicht aan 
-	centerLight = analogRead(AmbientSenseCenter); //lees de lichtsensor
+	centerLight # analogRead(AmbientSenseCenter); //lees de lichtsensor
 	Serial.println(centerLight);		//print de waarde van de lichtsensor
 
 	if (centerLight < 100)	//als centerLight lager is dan 100
@@ -116,7 +116,7 @@ Je zal snel inzien dat het heel moeilijk is om een goede drempelwaarde te vinden
 
 Heb je enig idee om dit op te lossen? We willen de Wink zo gevoelig als mogelijk maken voor obstakels (zodat hij deze van ver weg al ziet), maar het aanwezige licht van de ruimte maakt dit moeilijk. Denk er maar eens over na of overleg eens met iemand uit je groep om dit op te lossen voordat je verder leest.
 
-== Een goede drempelwaarde ==
+## Een goede drempelwaarde ##
 Een eenvoudige manier om het effect van het aanwezige licht in de kamer op te heffen is om twee verschillende metingen te nemen van de lichtsterkte. We kunnen de ene keer de lichtsterke meten als het voorlicht uit staat en deze waarde opslaan in een variabele. Daarna kunnen we het voorlicht uitzetten en nog een meting doen. Deze tweede meting zal het licht meten die wordt weerkaatst van het obstakel, maar ook het licht bevatten wat al aanwezig was in de ruimte.
 
 Als we het verschil van deze twee waardes nemen, verwijderen we hiermee het gemeten aanwezige licht uit de kamer. Het resultaat is het licht wat door het voorlicht wordt weerkaatst via een obstakel en het oppervlakte. Kijk maar eens naar dit voorbeeld:
@@ -130,13 +130,13 @@ void loop(){
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff = analogRead(AmbientSenseCenter); //lees de lichtsterkte
+	centerLightOff # analogRead(AmbientSenseCenter); //lees de lichtsterkte
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn = analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
+	centerLightOn # analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
 	
-	centerLightOnly = centerLightOn - centerLightOff; //neem het verschil
+	centerLightOnly # centerLightOn - centerLightOff; //neem het verschil
 	
 	Serial.println(centerLightOnly); //print de lichtsterkte van het voorlicht 
 
@@ -161,13 +161,13 @@ void loop(){
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff = analogRead(AmbientSenseCenter); //lees de lichtsterkte
+	centerLightOff # analogRead(AmbientSenseCenter); //lees de lichtsterkte
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn = analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
+	centerLightOn # analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
 	
-	centerLightOnly = centerLightOn - centerLightOff; //neem het verschil
+	centerLightOnly # centerLightOn - centerLightOff; //neem het verschil
 	
 	Serial.println(centerLightOnly); //print de lichtsterkte van het voorlicht 
 
@@ -190,7 +190,7 @@ Experimenteer met de drempelwaarde totdat je Wink goed werkt. Als de Wink vaker 
 
 Als de Wink heel dichtbij een obstakel moet staan om te stoppen, zou je de drempelwaarde iets kunnen verlagen.
 
-== Omgaan met het weerkaatste licht van de oppervlakte ==
+## Omgaan met het weerkaatste licht van de oppervlakte ##
 Nu we onze robot goed hebben laten werken, moeten we nog steeds onze drempelwaarde aanpassen op basis van de oppervlakte waarop we bewegen. Het is vervelend om elke keer als de Wink op een ander oppervlakte rijdt de waarde te meten en vervolgens aan te passen.
 
 We kunnen op verschillende manieren omgaan met het licht wat wordt weerkaatst door het oppervlakte. We gaan nu een eenvoudige oplossing toepassen. Er zijn wellicht andere manieren die beter werken, maar die zijn op dit moment te complex om te maken.
@@ -199,7 +199,7 @@ Het idee is om een lichtsterkte meting te doen terwijl de Wink niet beweegt en z
 
 Zodra we deze "nul-meting" hebben gedaan en opgeslagen, kan de Wink beginnen met rijden en kunnen we meerdere metingen gaan doen. Deze nieuwe metingen kunnen we vergelijken met de oude waarde, en als de nieuwe meting met een bepaalde waarde naar boven afwijkt wordt dit de nieuwe nul-meting.
 
-== Waarschuwing: enge code! ==
+## Waarschuwing: enge code! ##
 De code die straks volgt ziet er indrukwekkend uit, maar het is niet zo erg als het lijkt. Het is het langste voorbeeld die we tot nu hebben gezien, maar laat dit je niet afschrikken. In een vervolgles gaan we leren hoe we onze eigen "functies" kunnen schrijven om deze code veel korter te maken en beter te begrijpen.
 
 De reden dat het voorbeeld zo lang lijkt is dat we grotendeels een stuk code herhalen die het voorlicht aan en uit zet, de lichtsterkte meet en vervolgens het verschil uitrekent.
@@ -233,29 +233,29 @@ void setup() {
 
 	digitalWrite(Headlight, LOW);	//zet het voorlicht uit
 	delay(1);						//wacht 1 milliseconde
-	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
 
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	baseline = centerLightOn - centerLightOff; //bereken het verschil
+	baseline # centerLightOn - centerLightOff; //bereken het verschil
 
 	//Met onderstaande code kan je de gevoeligheid van de Wink instellen
-	threshold = baseline + 10; 		//tel 10 bij de nul-meting op
+	threshold # baseline + 10; 		//tel 10 bij de nul-meting op
 }
 
 void loop() {
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan 
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	centerLightOnly = centerLightOn - centerLightOff;
+	centerLightOnly # centerLightOn - centerLightOff;
 	
 	if (centerLightOnly < threshold) //bereken het verschil met de drempelwaarde 
 	{
@@ -275,7 +275,7 @@ Om de gevoeligheid aan te passen, kan je spelen met de laatste regel van de `set
 ```c
 //pas het getal 10 aan om de gevoeligheid van de Wink te verbeteren. 
 //Lage getallen zorgen voor een hogere gevoeligheid van obstakels die verder weg zijn
-threshold = baseline + 10;	
+threshold # baseline + 10;	
 ```
 
 Laten we eens bekijken wat er gebeurt in deze regel code. Herinner je je nog dat de waarde van `baseline` de lichtsterkte is die door het oppervlakte wordt weerkaatst? Hier tellen we dan 10 bij op en bewaren dit getal in de variabele `threshold` (drempelwaarde). Verder op in onze code bekijken we of onze `centerLightOnly` minder is dan deze drempelwaarde in de `if` conditie. Als het minder is, dan gaan de motoren naar voren. Als het niet minder is dan zullen we motoren stoppen met bewegen.
@@ -284,7 +284,7 @@ Dit betekent dat als een obstakel de lichtsterkte meer dan 10 boven de in de `se
 
 Als de waarde die er bij wordt opgeteld lager wordt gemaakt, dan is de drempelwaarde lager. Dit betekent dat de Wink obstakels verder weg kan zien, maar ook dat als hij een beetje heen en weer schommelt op een oppervlakte de kans groter is dat het lijkt alsof hij een obstakel ziet en stopt met bewegen...
 
-== Nog een uitdaging ==
+## Nog een uitdaging ##
 Nu weet je hoe je een obstakel moet detecteren met de Wink. Laten we nu eens een stap toevoegen aan de vorige opdracht. Je hebt gemerkt dat als je je hand voor de Wink houdt deze stopt met rijden, zodra het obstakel er niet meer is begint het rijden weer.
 
 Wat je wellicht ook heb gemerkt is dat als je je hand langzaam naar achter beweegt de Wink steeds verder naar voren rijdt en ongeveer dezelfde afstand naar je hand aanhoudt. In de volgende opdracht gaan we proberen de Wink naar achter te laten rijden als je hand dichterbij komt. We zullen verder gaan met het vorige voorbeeld zodat hij als hij je hand ziet stopt met rijden. Maar zou het ook lukken om hem achteruit te laten rijden als je hand dichterbij komt?
@@ -293,7 +293,7 @@ Bedenk dat als je hand dichter bij de Wink komt, de hoeveelheid licht die wordt 
 
 In het volgende voorbeeld willen we een drempelwaarde bepalen wanneer de Wink stopt met rijden, en een drempelwaarde wanneer de Wink naar achter moet rijden. Denk maar eens na over hoe jij dit zou doen...
 
-== Uitdaging: Wink rijdt achteruit als een obstakel dichterbij komt ==
+## Uitdaging: Wink rijdt achteruit als een obstakel dichterbij komt ##
 Er zijn ook hier weer verschillende manieren om de uitdaging op te lossen. Dit is wat wij gaan doen: In het voorbeeld hebben we een tweede variabele gemaakt om de drempelwaarde voor het achteruit rijden in op te slaan en een `else if` conditie toegevoegd aan onze `if` conditie. Dit zou de Wink naar je hand moeten laten rijden en stoppen, om vervolgens achteruit te rijden als je hand dichterbij komt. Je kan ook hier weer spelen met deze twee drempelwaardes die in de `setup()` worden bepaald. Hiermee kan je de gevoeligheid aanpassen. Je zou ook de snelheid van de motoren kunnen aanpassen. Speel er maar eens mee en maak plezier, verander de code naar eigen inzicht om iets te doen als de Wink een obstakel tegen komt.
 
 ```c
@@ -321,30 +321,30 @@ void setup() {
 
 	digitalWrite(Headlight, LOW);	//zet het voorlicht uit
 	delay(1);						//wacht 1 milliseconde
-	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
 
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	baseline = centerLightOn - centerLightOff; //bereken het verschil
+	baseline # centerLightOn - centerLightOff; //bereken het verschil
 
 	//Met onderstaande code kan je de gevoeligheid van de Wink instellen
-	stopThreshold = baseline + 10; 		//tel 10 bij de nul-meting op
-	revThreshold = baseline + 15		//tel 15 bij de achteruit rij drempelwaarde 
+	stopThreshold # baseline + 10; 		//tel 10 bij de nul-meting op
+	revThreshold # baseline + 15		//tel 15 bij de achteruit rij drempelwaarde 
 }
 
 void loop() {
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan 
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	centerLightOnly = centerLightOn - centerLightOff;
+	centerLightOnly # centerLightOn - centerLightOff;
 	
 	if (centerLightOnly < stopThreshold) //bereken het verschil met de stop drempelwaarde 
 	{
