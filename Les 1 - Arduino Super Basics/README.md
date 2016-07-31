@@ -23,7 +23,7 @@ Hieronder is een voorbeeld van de broncode, kortweg code, voor het programmeren 
 
 ``` c
 /*
-Alles in dit gedeelte is commentaar. Commentaar verteld je onder andere wat het programma doet. 
+Alles in dit gedeelte is commentaar. Commentaar vertelt je onder andere wat het programma doet. 
 De computer negeert commentaar, ze zijn er alleen om mensen te helpen om de code te begrijpen.
 
 Gebruik commentaar om jezelf en andere mensen te vertellen wat de code doet. 

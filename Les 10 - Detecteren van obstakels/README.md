@@ -56,7 +56,7 @@ int centerLight; //declareer variabele
 void loop(){
 
 	digitalWrite(Headlight, HIGH); //zet het voorlicht aan 
-	centerLight # analogRead(AmbientSenseCenter); //lees de lichtsensor
+	centerLight = analogRead(AmbientSenseCenter); //lees de lichtsensor
 
 	if (centerLight < 100)	//als centerLight lager is dan 100
 	{
@@ -91,7 +91,7 @@ int centerLight; //declareer variabele
 void loop(){
 
 	digitalWrite(Headlight, HIGH); //zet het voorlicht aan 
-	centerLight # analogRead(AmbientSenseCenter); //lees de lichtsensor
+	centerLight = analogRead(AmbientSenseCenter); //lees de lichtsensor
 	Serial.println(centerLight);		//print de waarde van de lichtsensor
 
 	if (centerLight < 100)	//als centerLight lager is dan 100
@@ -130,13 +130,13 @@ void loop(){
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff # analogRead(AmbientSenseCenter); //lees de lichtsterkte
+	centerLightOff = analogRead(AmbientSenseCenter); //lees de lichtsterkte
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn # analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
+	centerLightOn = analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
 	
-	centerLightOnly # centerLightOn - centerLightOff; //neem het verschil
+	centerLightOnly = centerLightOn - centerLightOff; //neem het verschil
 	
 	Serial.println(centerLightOnly); //print de lichtsterkte van het voorlicht 
 
@@ -161,13 +161,13 @@ void loop(){
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff # analogRead(AmbientSenseCenter); //lees de lichtsterkte
+	centerLightOff = analogRead(AmbientSenseCenter); //lees de lichtsterkte
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn # analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
+	centerLightOn = analogRead(AmbientSenseCenter); //lees nogmaals de lichtsterkte
 	
-	centerLightOnly # centerLightOn - centerLightOff; //neem het verschil
+	centerLightOnly = centerLightOn - centerLightOff; //neem het verschil
 	
 	Serial.println(centerLightOnly); //print de lichtsterkte van het voorlicht 
 
@@ -233,29 +233,29 @@ void setup() {
 
 	digitalWrite(Headlight, LOW);	//zet het voorlicht uit
 	delay(1);						//wacht 1 milliseconde
-	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
 
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	baseline # centerLightOn - centerLightOff; //bereken het verschil
+	baseline = centerLightOn - centerLightOff; //bereken het verschil
 
 	//Met onderstaande code kan je de gevoeligheid van de Wink instellen
-	threshold # baseline + 10; 		//tel 10 bij de nul-meting op
+	threshold = baseline + 10; 		//tel 10 bij de nul-meting op
 }
 
 void loop() {
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan 
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	centerLightOnly # centerLightOn - centerLightOff;
+	centerLightOnly = centerLightOn - centerLightOff;
 	
 	if (centerLightOnly < threshold) //bereken het verschil met de drempelwaarde 
 	{
@@ -275,7 +275,7 @@ Om de gevoeligheid aan te passen, kan je spelen met de laatste regel van de `set
 ```c
 //pas het getal 10 aan om de gevoeligheid van de Wink te verbeteren. 
 //Lage getallen zorgen voor een hogere gevoeligheid van obstakels die verder weg zijn
-threshold # baseline + 10;	
+threshold = baseline + 10;	
 ```
 
 Laten we eens bekijken wat er gebeurt in deze regel code. Herinner je je nog dat de waarde van `baseline` de lichtsterkte is die door het oppervlakte wordt weerkaatst? Hier tellen we dan 10 bij op en bewaren dit getal in de variabele `threshold` (drempelwaarde). Verder op in onze code bekijken we of onze `centerLightOnly` minder is dan deze drempelwaarde in de `if` conditie. Als het minder is, dan gaan de motoren naar voren. Als het niet minder is dan zullen we motoren stoppen met bewegen.
@@ -321,30 +321,30 @@ void setup() {
 
 	digitalWrite(Headlight, LOW);	//zet het voorlicht uit
 	delay(1);						//wacht 1 milliseconde
-	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
 
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	baseline # centerLightOn - centerLightOff; //bereken het verschil
+	baseline = centerLightOn - centerLightOff; //bereken het verschil
 
 	//Met onderstaande code kan je de gevoeligheid van de Wink instellen
-	stopThreshold # baseline + 10; 		//tel 10 bij de nul-meting op
-	revThreshold # baseline + 15		//tel 15 bij de achteruit rij drempelwaarde 
+	stopThreshold = baseline + 10; 		//tel 10 bij de nul-meting op
+	revThreshold = baseline + 15		//tel 15 bij de achteruit rij drempelwaarde 
 }
 
 void loop() {
 
 	digitalWrite(Headlight, LOW); 	//zet het voorlicht uit
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOff # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOff = analogRead(AmbientSenseCenter); //lees lichtsensor
 	
 	digitalWrite(Headlight, HIGH); 	//zet het voorlicht aan 
 	delay(1); 						//wacht 1 milliseconde
-	centerLightOn # analogRead(AmbientSenseCenter); //lees lichtsensor
+	centerLightOn = analogRead(AmbientSenseCenter); //lees lichtsensor
 	
-	centerLightOnly # centerLightOn - centerLightOff;
+	centerLightOnly = centerLightOn - centerLightOff;
 	
 	if (centerLightOnly < stopThreshold) //bereken het verschil met de stop drempelwaarde 
 	{
@@ -361,3 +361,4 @@ void loop() {
 } //end of loop()
 ```
 
+> Leren programmeren - Ch10 Rev01.1 ~ Plum Geek
